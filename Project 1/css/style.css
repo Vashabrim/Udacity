@@ -1,10 +1,11 @@
 body {
 	color: #747704;
-	font-family: 'Lato', sans-serif;
+	font-family: "Lato", sans-serif;
 	font-weight: 300;
 }
+
 .text-muted {
-	color: #BCBBBB;
+	color: #bcbbbb;
 }
 
 .text-thin {
@@ -18,8 +19,14 @@ body {
 .title-logo{
 	margin-top: 3%;
 }
+
 hr.style-one {
-    border: 0;
-    height: 2px;
-    background: #BCBBBB;
+	border: 0;
+	height: 2px;
+	background: #bcbbbb;
+}
+
+.logo-size {
+	height: 100px;
+	width: 100px;
 }
