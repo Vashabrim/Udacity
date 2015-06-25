@@ -83,3 +83,51 @@ var projects = {
 		"images":[]
 	}]
 }
+
+if (bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+
+}
+	function displayWork() {
+		for (job in work.jobs){
+		$("#workExperience").append(HTMLworkStart);
+
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedRole = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+		$(".work-entry:last").append(formattedEmployerTitle);
+
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		$("work-entry:last").append(formattedDates);
+
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$("work-entry:last").append(formattedDescription);
+}
+displayWork();
+}
+$(document).click(function(loc){
+	var x = loc.pageX;
+	var y = loc.pageY;
+
+	logClicks(x,y);
+})
+
+function locationizer(work_obj) {
+	var locationArray = [];
+
+	for (job in work_obj.jobs) {
+		var newLocation = work_obj.jobs[job].location;
+		locationArray.push(newLocation);
+	}
+	return locationArray
+}
+console.log(locationizer(work))
