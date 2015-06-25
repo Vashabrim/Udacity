@@ -1,13 +1,5 @@
-//var formattedName=HTMLheaderName.replace("%data%", "Doug Stubbs");
-
-//var role = "Web Developer";
-//var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-//$("#header").prepend(formattedRole);
-//$("#header").prepend(formattedName);
-
 var bio = {
-	"name":"Doug",
+	"name":"Doug Stubbs",
 	"role":"Web Developer",
 	"contacts":{
 		"mobile":"515-491-9020",
@@ -16,23 +8,43 @@ var bio = {
 		"twitter":"@1TrueDAS",
 		"location":"Des Moines"
 	},
-	"welcomeMessage":"Bacon ipsum dolor amet id filet mignon dolore pork belly capicola kevin meatloaf dolore aliquip in. Anim picanha alcatra jowl corned beef ullamco voluptate magna et qui sausage dolor. Salami laborum beef ribs ham. Ut porchetta spare ribs, magna nisi labore cillum alcatra turducken. Kielbasa non pig alcatra beef sunt excepteur jowl cillum laborum do pastrami. Cillum alcatra do cow dolor tail culpa ribeye flank.",
-	"skills":["Awesomeness","Web Developer", "Desktop Support"],
+	"welcomeMessage":"An experienced IT professional with proven skills in web development, desktop support, and helpdesk. Self-starter with a passion to initiate action through concise communication and collaboration within a team environment. A non-stop learner.",
+	"skills":["HTML5", "CSS","Bootstrap","JavaScript","Java","Python","Powershell","Adobe Creative Suite","Active Directory","GitHub version control","Microsoft Office Suite","Microsoft Exchange","Microsoft Sharepoint","Microsoft Visual Studio","Microsoft Windows 7,8, and 10"],
 	"bioPic":"images/fry.jpg"
 }
 
-//$("#main").append(bio.name);
-
-//bio.city= "Des Moines, IA";
-
 var work = {
-
+	"jobs": [
+	{
+		"employer":"Nationwide Insurance",
+		"title":"Senior Analyst",
+		"location":"Des Moines, IA",
+		"dates":"2011-",
+		"description":"Primary responsibilities included desktop support, as well as support of corporate customer base. Enhanced team engagement by creating a web based activity for use after staff meetings. The project increased engagement, as well as attention and focus for the team during meetings"
+	},
+	{
+		"employer":"TEKSystems",
+		"title":"Contractor",
+		"location":"Des Moines, IA",
+		"dates":"2000-2005, 2010-2011",
+		"description":"Contractor for various companies around Des Moines, including Iowa Methodist Hospital, Farm Bureau Insurance, and Nationwide Insurance"
+	},
+	{
+		"employer":"Kelly IT Services",
+		"title":"Contractor",
+		"location":"Des Moines, IA",
+		"dates":"2009-2010",
+		"description":"Quality assurance position at Pioneer Hi-Bred for a new field sales system software, then moved to technical support for users in the field after use. Problem-solved software issues with developers and field users."
+	},
+	{
+		"employer":"Principal Financial Group",
+		"title":"Helpdesk Technician",
+		"location":"Des Moines, IA",
+		"dates":"2005-2009",
+		"description":"Resolved help desk calls and incident tickets and provided excellent customer service in a second-level support role. I was a lead for the department in OS migration, mobile devices including BlackBerry, Microsoft Exchange, and Active Director management"
+	}
+	]
 }
-
-work.position="Senior Analyst";
-work.employer="Nationwide Insurance";
-work.city="Des Moines, IA";
-work.years="4 years";
 
 var education = {
     "schools": [
@@ -40,21 +52,34 @@ var education = {
             "name": "Marshalltown Community College",
             "city": "Marshalltown, IA",
             "degree": "Associates",
-            "major": [
-                "General Studies"
-            ]
+            "major": ["General Studies"],
+            "dates": "1996",
+            "url":"http://www.iavalley.edu/mcc/"
         },
         {
             "name": "Des Moines Area Community College",
             "city": "Des Moines, IA",
             "degree": "Web Development certificate- Incomplete",
-            "major": [
-                "Web Development certificate"
-            ]
+            "major": ["Web Development certificate"],
+            "dates":"2014",
+            "url":"http://www.dmacc.edu"
         }
-    ]
+        ],
+        "onlineCourses": [
+        {
+        	"title": "Front End Web Developer Nanodegree",
+        	"school":"Udacity",
+        	"dates":"2015",
+        	"url":"http://www.udacity.com"
+        }]
 }
 
-
-//$("#main").append(work["position"]);
-//$         ("#main").append(education.school);
+var projects = {
+	"projects": [
+	{
+		"title":"HDI Iowa website",
+		"dates":"2010-",
+		"description":"I maintain and update the website for the HDI chapter of Iowa",
+		"images":[]
+	}]
+}
