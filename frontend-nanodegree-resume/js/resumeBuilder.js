@@ -34,17 +34,14 @@ $("#topContacts").append(formattedTwitter);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts").append(formattedLocation);
 
-var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedMsg);
-
-//var formattedSkills = 
-
 var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#header").append(formattedbioPic);
 
+var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedMsg);
 
 var work = {
-	jobs: [
+	"jobs": [
 	{
 		employer:"Nationwide Insurance",
 		title:"Senior Analyst",
@@ -75,6 +72,22 @@ var work = {
 	}
 	]
 };
+
+work.display = function() {
+	work.jobs.forEach(function (job){
+		$("#workExperience").append(HTMLworkStart);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+		$(".work-entry:last").append(formattedEmployerTitle);
+		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedDescription);
+
+	})
+}
+/* function displayWork(){
  for (job in work.jobs){
  	$("#workExperience").append(HTMLworkStart);
  	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -89,13 +102,10 @@ var work = {
  	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
  	$(".work-entry:last").append(formattedDescription);
  }
-/*work.display = function() {
-	for (work in work.work){
-		$("#workExperience").append(HTMLworkStart);
+}
+displayWork();
+*/
 
-		var HTMLworkStart = HTMLworkEmployer.replace("%data%" , work.work)
-	}
-};*/
 
 var education = {
     schools: [
@@ -131,19 +141,17 @@ var projects = {
 		title:"HDI Iowa website",
 		dates:"2010-",
 		description:"I maintain and update the website for the HDI chapter of Iowa",
-		images:[]
+		images:["images\capture.PNG"]
 	}]
 };
 
-function inName(name){
-	name = (bio.name).trim().split(" ");
-	console.log(name);
+/*	name = (bio.name).trim().split(" ");
 	name[1] = name[1].toUpperCase();
 	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
 	return name[0] + " "+name[1];
 }
 $("#main").append(internationalizeButton)
-
+*/
 projects.display = function() {
 	for (project in projects.projects){
 		$("#projects").append(HTMLprojectStart);
@@ -157,7 +165,7 @@ projects.display = function() {
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 		$(".project-entry:last").append(formattedDescription);
 
-		if (projects.projects[project].images.length >0) {
+		if (projects.projects[project].images.length > 0) {
 			for (image in projects.projects[project].images) {
 				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
 				$(".project-entry:last").append(formattedImage);
@@ -165,5 +173,15 @@ projects.display = function() {
 		}
 	}
 }
+/* function locationizer(work_obj) {
+ 	var locationArray = [];
 
-$("#eduation").append(education.schoools[name])
+ 	for (job in work_obj.jobs) {
+ 		var newLocation = work_obj.jobs[job].location;
+ 		locationArray.push(newLocation);
+ 	}
+ 	return locationArray;
+ }*/
+//$("#eduation").append(education.schoools[name])
+
+$("#mapDiv").append(googleMap);
