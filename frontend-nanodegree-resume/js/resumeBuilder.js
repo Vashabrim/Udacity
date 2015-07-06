@@ -1,187 +1,188 @@
 var bio = {
-	name: "Doug Stubbs",
-	role: "Web Developer",
-	contacts:{
-		mobile: "515-491-9020",
-		email: "stubbs.doug@gmail.com",
-		github: "vashabrim",
-		twitter: "@1TrueDAS",
-		location: "Des Moines"
-	},
-	welcomeMessage: "An experienced IT professional with proven skills in web development, desktop support, and helpdesk. Self-starter with a passion to initiate action through concise communication and collaboration within a team environment. A non-stop learner.",
-	skills: ["HTML5", "CSS","Bootstrap","JavaScript","Java","Python","Powershell","Adobe Creative Suite","Active Directory","GitHub version control","Microsoft Office Suite","Microsoft Exchange","Microsoft Sharepoint","Microsoft Visual Studio","Microsoft Windows 7,8, and 10"],
-	bioPic:"images/fry.jpg"
+	"name" : "Doug Stubbs",
+	"role" : "Web Developer",
+	"bioPic" : "images/fry.jpg",
+	"welcomeMessage" : "An experienced IT professional with proven skills in web development, desktop support, and helpdesk. Self-starter with a passion to initiate action through concise communication and collaboration within a team environment. A non-stop learner.",
+	"contacts" : [{
+		"mobile" : "515-867-5309",
+		"email" : "stubbs.doug@gmail.com",
+		"github" : "vashabrim",
+		"twitter" : "@1TrueDAS",
+		"location" : "Des Moines"
+	}],
+	
+	"skills": ["HTML5", "CSS","Bootstrap","JavaScript","Java","Python","Powershell","Adobe Creative Suite","Active Directory","GitHub version control","Microsoft Office Suite","Microsoft Exchange","Microsoft Sharepoint","Microsoft Visual Studio","Microsoft Windows 7,8, and 10"]
+	
 };
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
-
-var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedemail);
-
-var formattedgithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(formattedgithub);
-
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts").append(formattedTwitter);
-
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedLocation);
-
-var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$("#header").append(formattedbioPic);
-
-var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedMsg);
-
 var work = {
-	"jobs": [
+	"jobs" : [
 	{
-		employer:"Nationwide Insurance",
-		title:"Senior Analyst",
-		location:"Des Moines, IA",
-		dates:"2011-",
-		description:"Primary responsibilities included desktop support, as well as support of corporate customer base. Enhanced team engagement by creating a web based activity for use after staff meetings. The project increased engagement, as well as attention and focus for the team during meetings"
+		"employer":"Nationwide Insurance",
+		"title":"Senior Analyst",
+		"location":"Des Moines, IA",
+		"dates":"2011-",
+		"description":"Primary responsibilities included desktop support, as well as support of corporate customer base. Enhanced team engagement by creating a web based activity for use after staff meetings. The project increased engagement, as well as attention and focus for the team during meetings"
 	},
 	{
-		employer:"TEKSystems",
-		title:"Contractor",
-		location:"Des Moines, IA",
-		dates:"2000-2005, 2010-2011",
-		description:"Contractor for various companies around Des Moines, including Iowa Methodist Hospital, Farm Bureau Insurance, and Nationwide Insurance"
+		"employer":"TEKSystems",
+		"title":"Contractor",
+		"location":"Des Moines, IA",
+		"dates":"2000-2005, 2010-2011",
+		"description":"Contractor for various companies around Des Moines, including Iowa Methodist Hospital, Farm Bureau Insurance, and Nationwide Insurance"
 	},
 	{
-		employer:"Kelly IT Services",
-		title:"Contractor",
-		location:"Des Moines, IA",
-		dates:"2009-2010",
-		description:"Quality assurance position at Pioneer Hi-Bred for a new field sales system software, then moved to technical support for users in the field after use. Problem-solved software issues with developers and field users."
+		"employer":"Kelly IT Services",
+		"title":"Contractor",
+		"location":"Des Moines, IA",
+		"dates":"2009-2010",
+		"description":"Quality assurance position at Pioneer Hi-Bred for a new field sales system software, then moved to technical support for users in the field after use. Problem-solved software issues with developers and field users."
 	},
 	{
-		employer:"Principal Financial Group",
-		title:"Helpdesk Technician",
-		location:"Des Moines, IA",
-		dates:"2005-2009",
-		description:"Resolved help desk calls and incident tickets and provided excellent customer service in a second-level support role. I was a lead for the department in OS migration, mobile devices including BlackBerry, Microsoft Exchange, and Active Director management"
+		"employer":"Principal Financial Group",
+		"title":"Helpdesk Technician",
+		"location":"Des Moines, IA",
+		"dates":"2005-2009",
+		"description":"Resolved help desk calls and incident tickets and provided excellent customer service in a second-level support role. I was a lead for the department in OS migration, mobile devices including BlackBerry, Microsoft Exchange, and Active Director management"
 	}
 	]
 };
 
-work.display = function() {
-	work.jobs.forEach(function (job){
-		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-		$(".work-entry:last").append(formattedEmployerTitle);
-		$(".work-entry:last").append(formattedDates);
-		$(".work-entry:last").append(formattedDescription);
-
-	})
-}
-/* function displayWork(){
- for (job in work.jobs){
- 	$("#workExperience").append(HTMLworkStart);
- 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
- 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
- 	
- 	var formattedEmployerTitle = formattedEmployer + formattedTitle;
- 	$(".work-entry:last").append(formattedEmployerTitle);
- 	
- 	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
- 	$(".work-entry:last").append(formattedDates);
-
- 	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
- 	$(".work-entry:last").append(formattedDescription);
- }
-}
-displayWork();
-*/
-
 
 var education = {
-    schools: [
+    "schools" : [
         {
-            name: "Marshalltown Community College",
-            city: "Marshalltown, IA",
-            degree: "Associates",
-            major: ["General Studies"],
-            dates: "1996",
-            url:"http://www.iavalley.edu/mcc/"
+            "name" : "Marshalltown Community College",
+            "city" : "Marshalltown, IA",
+            "degree" : "Associates",
+            "major" : ["General Studies"],
+            "dates" : "1996",
+            "url" : "http://www.iavalley.edu/mcc/"
         },
         {
-            name: "Des Moines Area Community College",
-            city: "Des Moines, IA",
-            degree: "Web Development certificate- Incomplete",
-            major: ["Web Development certificate"],
-            dates:"2014",
-            url:"http://www.dmacc.edu"
+            "name" : "Des Moines Area Community College",
+            "city" : "Des Moines, IA",
+            "degree" : "Web Development certificate- in Progress",
+            "major" : ["Web Development certificate"],
+            "dates" : "2014",
+            "url" : "http://www.dmacc.edu"
         }
         ],
-        onlineCourses: [
+        "onlineCourses" : [
         {
-        	title: "Front End Web Developer Nanodegree",
-        	school:"Udacity",
-        	dates:"2015",
-        	url:"http://www.udacity.com"
+        	"title" : "Front End Web Developer Nanodegree",
+        	"school" : "Udacity",
+        	"dates" : "2015",
+        	"url" : "http://www.udacity.com"
         }]
 };
 
 var projects = {
-	projects: [
+	"projects" : [
 	{
-		title:"HDI Iowa website",
-		dates:"2010-",
-		description:"I maintain and update the website for the HDI chapter of Iowa",
-		images:["images\capture.PNG"]
-	}]
+		"title":"HDI Iowa website",
+		"dates":"2010-",
+		"description":"I maintain and update the website for the HDI chapter of Iowa",
+		"images":"images/Capture.PNG"
+	},
+	{
+		"title" : "Red Team Prize Bingo",
+		"dates" : "2012-2014",
+		"description" : "Red Team prize wheel that you spin to win prizes",
+		"images" : "images/197x148.gif"
+	}
+	]
 };
 
-/*	name = (bio.name).trim().split(" ");
-	name[1] = name[1].toUpperCase();
-	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-	return name[0] + " "+name[1];
-}
-$("#main").append(internationalizeButton)
-*/
+
+bio.display = function() {
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+	$("#header").prepend(formattedRole).prepend(formattedName).append(formattedbioPic,formattedMsg);
+	$("#header").append(HTMLskillsStart);
+
+	for(skill in bio.skills) {
+		var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
+		$("#skills").append(formattedSkills);
+	};
+
+	for(contact in bio.contacts) {
+		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact].mobile);
+		var formattedEmail = HTMLemail.replace("%data%", bio.contacts[contact].email);
+		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts[contact].location);
+		$("#footerContacts").append(formattedMobile, formattedEmail);
+		$("#topContacts").append(formattedLocation);
+	};
+
+};
+
+education.display = function() {
+	for(school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+
+		var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+		
+		$(".education-entry:last").prepend(formattedName + formattedDegree, formattedDates,formattedLocation, formattedMajor);
+	};
+	for(course in education.onlineCourses){
+		
+		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+		var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+		var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+		var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+
+		$(".education-entry:last").append(HTMLonlineClasses);	
+		$(".education-entry:last").append(formattedTitle, formattedSchool, formattedDates, formattedUrl);
+	};
+	
+};
+
+work.display = function() {
+	for(job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
+
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		$(".work-entry:last").append(formattedEmployer + formattedTitle,formattedLocation,formattedDates,formattedDescription);
+	};
+};
+
 projects.display = function() {
-	for (project in projects.projects){
+	for(project in projects.projects){
 		$("#projects").append(HTMLprojectStart);
 
 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-		$(".project-entry:last").append(formattedTitle);
-
 		var formattedDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
-		$(".project-entry:last").append(formattedDates);
-
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		$(".project-entry:last").append(formattedDescription);
+		var formattedImg = HTMLprojectImage.replace("%data%", projects.projects[project].images);
 
-		if (projects.projects[project].images.length > 0) {
-			for (image in projects.projects[project].images) {
-				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-				$(".project-entry:last").append(formattedImage);
-			}
-		}
-	}
-}
-/* function locationizer(work_obj) {
- 	var locationArray = [];
+		$(".project-entry:last").append(formattedTitle, formattedDates, formattedDescription, formattedImg);
+		};
+		
+	};
 
- 	for (job in work_obj.jobs) {
- 		var newLocation = work_obj.jobs[job].location;
- 		locationArray.push(newLocation);
- 	}
- 	return locationArray;
- }*/
-//$("#eduation").append(education.schoools[name])
+function inName(name){
+	console.log(name);
+	var newName = name;
+	newName = newName[0].toUpperCase() + newName.slice(1,newName.indexOf(" ")+ 1).toLowerCase() + newName.slice(newName.indexOf(" ")+1).toUpperCase();
 
+	return newName;
+};
+
+$("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
+
+bio.display();
+work.display();
+education.display();
+projects.display();

@@ -71,7 +71,10 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
 });
 
 
@@ -91,10 +94,10 @@ function initializeMap() {
 
     var locations = [];
 
-    locations.push(bio.contacts.location);
+    locations.push(bio.contacts[contact].location);
 
     for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+      locations.push(education.schools[school].city);
     }
 
     for (var job in work.jobs) {
@@ -117,7 +120,7 @@ function initializeMap() {
     });
 
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      infoWindow.open(map, marker);
     });
     bounds.extend(new google.maps.LatLng(lat, lon));
     map.fitBounds(bounds);
