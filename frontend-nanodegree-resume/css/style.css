@@ -15,7 +15,7 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #C3FF71;
   line-height: 48px;
   display: inline;
 }
@@ -87,16 +87,16 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #C3FF71;
   display: none;
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #34651D;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #C3FF71;
 }
 
 .white-text {
@@ -105,13 +105,13 @@ a {
 }
 
 .gray {
-  background-color: #F3F3F3;
+  background-color: #34651D;
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #85C645;
 }
 
 /* TODO: Replace with image later */
@@ -135,6 +135,13 @@ a {
   padding-bottom: 2.5%
 }
 
+.role {
+  padding-left: 1%;
+  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+  color: #FFFFFF;
+}
 ul {
   list-style-type: none;
 }

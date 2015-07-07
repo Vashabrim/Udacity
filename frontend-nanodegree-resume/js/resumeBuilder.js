@@ -1,14 +1,15 @@
 var bio = {
 	"name" : "Doug Stubbs",
 	"role" : "Web Developer",
-	"bioPic" : "images/fry.jpg",
+	"bioPic" : "images/BMF.jpg",
 	"welcomeMessage" : "An experienced IT professional with proven skills in web development, desktop support, and helpdesk. Self-starter with a passion to initiate action through concise communication and collaboration within a team environment. A non-stop learner.",
 	"contacts" : [{
 		"mobile" : "515-867-5309",
 		"email" : "stubbs.doug@gmail.com",
 		"github" : "vashabrim",
 		"twitter" : "@1TrueDAS",
-		"location" : "Des Moines"
+		"location" : "Des Moines",
+		"linkedIn" : "<a href='https://www.linkedin.com/pub/doug-stubbs/90/986/834'>Doug Stubbs</a>"
 	}],
 	
 	"skills": ["HTML5", "CSS","Bootstrap","JavaScript","Java","Python","Powershell","Adobe Creative Suite","Active Directory","GitHub version control","Microsoft Office Suite","Microsoft Exchange","Microsoft Sharepoint","Microsoft Visual Studio","Microsoft Windows 7,8, and 10"]
@@ -89,7 +90,7 @@ var projects = {
 		"title" : "Red Team Prize Bingo",
 		"dates" : "2012-2014",
 		"description" : "Red Team prize wheel that you spin to win prizes",
-		"images" : "images/197x148.gif"
+		"images" : "images/redteam.PNG"
 	}
 	]
 };
@@ -113,8 +114,11 @@ bio.display = function() {
 		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact].mobile);
 		var formattedEmail = HTMLemail.replace("%data%", bio.contacts[contact].email);
 		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts[contact].location);
+		var formattedGit = HTMLgithub.replace("%data%", bio.contacts[contact].github);
+		var formattedTweety = HTMLtwitter.replace("%data%", bio.contacts[contact].twitter);
+		var formattedlinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts[contact].linkedIn);
 		$("#footerContacts").append(formattedMobile, formattedEmail);
-		$("#topContacts").append(formattedLocation);
+		$("#topContacts").append(formattedGit,formattedLocation, formattedlinkedIn, formattedTweety);
 	};
 
 };
