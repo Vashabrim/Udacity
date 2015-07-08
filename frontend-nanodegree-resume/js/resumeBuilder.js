@@ -19,32 +19,46 @@ var bio = {
 var work = {
 	"jobs" : [
 	{
-		"employer":"Nationwide Insurance",
-		"title":"Senior Analyst",
-		"location":"Des Moines, IA",
-		"dates":"2011-",
-		"description":"Primary responsibilities included desktop support, as well as support of corporate customer base. Enhanced team engagement by creating a web based activity for use after staff meetings. The project increased engagement, as well as attention and focus for the team during meetings"
+		"employer" : "Nationwide Insurance",
+		"title" : "Senior Analyst",
+		"location" : "Des Moines, IA",
+		"dates" : "2011-",
+		"description" : "Primary responsibilities included desktop support, as well as support of corporate customer base. Enhanced team engagement by creating a web based activity for use after staff meetings. The project increased engagement, as well as attention and focus for the team during meetings"
 	},
 	{
-		"employer":"TEKSystems",
-		"title":"Contractor",
-		"location":"Des Moines, IA",
-		"dates":"2000-2005, 2010-2011",
-		"description":"Contractor for various companies around Des Moines, including Iowa Methodist Hospital, Farm Bureau Insurance, and Nationwide Insurance"
+		"employer" : "TEKSystems",
+		"title" : "Contractor",
+		"location" : "Des Moines, IA",
+		"dates" : "2000-2005, 2010-2011",
+		"description" : "Contractor for various companies around Des Moines, including Iowa Methodist Hospital, Farm Bureau Insurance, and Nationwide Insurance"
 	},
 	{
-		"employer":"Kelly IT Services",
-		"title":"Contractor",
-		"location":"Des Moines, IA",
-		"dates":"2009-2010",
-		"description":"Quality assurance position at Pioneer Hi-Bred for a new field sales system software, then moved to technical support for users in the field after use. Problem-solved software issues with developers and field users."
+		"employer" : "Kelly IT Services",
+		"title" : "Contractor",
+		"location" : "Johnston, IA",
+		"dates" : "2009-2010",
+		"description" : "Quality assurance position at Pioneer Hi-Bred for a new field sales system software, then moved to technical support for users in the field after use. Problem-solved software issues with developers and field users."
 	},
 	{
-		"employer":"Principal Financial Group",
-		"title":"Helpdesk Technician",
-		"location":"Des Moines, IA",
-		"dates":"2005-2009",
-		"description":"Resolved help desk calls and incident tickets and provided excellent customer service in a second-level support role. I was a lead for the department in OS migration, mobile devices including BlackBerry, Microsoft Exchange, and Active Director management"
+		"employer" : "Principal Financial Group",
+		"title" : "Helpdesk Technician",
+		"location" : "Des Moines, IA",
+		"dates" : "2005-2009",
+		"description" : "Resolved help desk calls and incident tickets and provided excellent customer service in a second-level support role. I was a lead for the department in OS migration, mobile devices including BlackBerry, Microsoft Exchange, and Active Director management"
+	},
+	{
+		"employer" : "B-Executive, Inc.",
+		"title" : "Technician",
+		"location" : "Prairie City, IA",
+		"dates": "1997-2000",
+		"description" : "Worked for small computer repair company, traveling to customer's locations to resolve computer, network, printer issues."
+	},
+	{
+		"employer" : "Lih Chen",
+		"title" : "Technician",
+		"location" : "Iowa City, IA",
+		"dates" : "1996-1997",
+		"description" : "PC repair and sales for a small company, specializing in support of restaurant POS systems."
 	}
 	]
 };
@@ -52,6 +66,14 @@ var work = {
 
 var education = {
     "schools" : [
+    	{
+    		"name" : "Iowa State University",
+    		"city" : "Ames, IA",
+    		"degree" : "N/A",
+    		"major" : "Pre-Engineering",
+    		"dates" : "1990-1992",
+    		"url" : "http:www.iastate.edu"
+    	},
         {
             "name" : "Marshalltown Community College",
             "city" : "Marshalltown, IA",
@@ -117,8 +139,8 @@ bio.display = function() {
 		var formattedGit = HTMLgithub.replace("%data%", bio.contacts[contact].github);
 		var formattedTweety = HTMLtwitter.replace("%data%", bio.contacts[contact].twitter);
 		var formattedlinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts[contact].linkedIn);
-		$("#footerContacts").append(formattedMobile, formattedEmail);
-		$("#topContacts").append(formattedGit,formattedLocation, formattedlinkedIn, formattedTweety);
+		$("#topContacts").append(formattedMobile, formattedEmail,formattedLocation);
+		$("#footerContacts").append(formattedGit, formattedlinkedIn, formattedTweety);
 	};
 
 };
@@ -132,8 +154,9 @@ education.display = function() {
 		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].city);
 		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-		
+				
 		$(".education-entry:last").prepend(formattedName + formattedDegree, formattedDates,formattedLocation, formattedMajor);
+		$("#").replaceWith(education.schools[school].url);
 	};
 	for(course in education.onlineCourses){
 		

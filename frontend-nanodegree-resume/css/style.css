@@ -23,7 +23,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: #5CBDA2;
   line-height: 29px;
   padding: 10px;
 }
@@ -31,7 +31,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000000;
+  color: #5CBDA2;
   line-height: 22px;
 }
 
@@ -52,7 +52,7 @@ h2, h3, h4, h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #85C645;
   line-height: 16px;
   float: left;
 }
@@ -60,7 +60,7 @@ h2, h3, h4, h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #85C645;
   line-height: 16px;
   float: right;
 
@@ -68,12 +68,12 @@ h2, h3, h4, h5 {
 
 p {
   font-size: 14px;
-  color: #333333;
+  color: #BEF0A6;
   line-height: 21px;
 }
 
 a {
-  color: #1199C3;
+  color: #FFFFFF;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -82,17 +82,17 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #96D8C6;
   line-height: 28px;
 }
 
 #skillsH3 {
-  color: #C3FF71;
+  color: #BCEB22;
   display: none;
 }
 
 .orange {
-  background-color: #34651D;
+  background-color: #20251E;
 }
 
 .orange-text {
@@ -105,18 +105,21 @@ a {
 }
 
 .gray {
-  background-color: #34651D;
+  background-color: #272921;
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #85C645;
+  background-color: #20251E;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background: url('../images/line_pattern_green_light_76355_1280x960.jpg') #20251E;
+  background-size: 100%;
+  background-repeat: no-repeat; 
+  background-position: 0 -150px;
 }
 
 .flex-box {
@@ -211,6 +214,7 @@ span {
 #mapDiv {
   height: 400px;
   width: 100%;
+  margin: auto;
   padding-bottom: 5%;
 }
 
