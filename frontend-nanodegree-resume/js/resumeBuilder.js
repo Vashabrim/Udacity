@@ -6,8 +6,8 @@ var bio = {
 	"contacts" : [{
 		"mobile" : "515-867-5309",
 		"email" : "stubbs.doug@gmail.com",
-		"github" : "vashabrim",
-		"twitter" : "@1TrueDAS",
+		"github" : "<a href='https://github.com/Vashabrim'>vashabrim</a>",
+		"twitter" : "<a href='https://twitter.com/1TrueDAS'>@1TrueDAS</a>",
 		"location" : "Des Moines",
 		"linkedIn" : "<a href='https://www.linkedin.com/pub/doug-stubbs/90/986/834'>Doug Stubbs</a>"
 	}],
@@ -154,9 +154,9 @@ education.display = function() {
 		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].city);
 		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+		var formattedUrl = HTMLschoolUrl.replace("%data%", education.schools[school].url);
 				
-		$(".education-entry:last").prepend(formattedName + formattedDegree, formattedDates,formattedLocation, formattedMajor);
-		$("#").replaceWith(education.schools[school].url);
+		$(".education-entry:last").prepend(formattedName + formattedDegree, formattedDates,formattedLocation, formattedMajor, formattedUrl);
 	};
 	for(course in education.onlineCourses){
 		
