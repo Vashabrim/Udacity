@@ -199,8 +199,8 @@ projects.display = function() {
 	};
 
 function inName(name){
-	console.log(name);
-	var newName = name;
+	console.log(bio.name);
+	var newName = bio.name;
 	newName = newName[0].toUpperCase() + newName.slice(1,newName.indexOf(" ")+ 1).toLowerCase() + newName.slice(newName.indexOf(" ")+1).toUpperCase();
 
 	return newName;
