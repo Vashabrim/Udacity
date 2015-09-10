@@ -36,7 +36,7 @@ Enemy.prototype.render = function() {
 }
 
 var Player = function(){
-    this.sprite = 'images/char-boy.png';
+    this.sprite = 'images/char-horn-girl.png';
     this.x = 200;
     this.y = 400;
 }
