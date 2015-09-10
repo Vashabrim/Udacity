@@ -1,6 +1,9 @@
 frontend-nanodegree-arcade-game
 ===============================
+This is a clone/cuted up version of the classic Frogger game, though instead of alligators now you have to worry about ladybugs.
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+Copy all the files to a folder, and open index.html in your browser.
 
-for self-checking their submission.
+Use the arrow keys to move (up, down, right, left)
+
+Watch out for those bugs!

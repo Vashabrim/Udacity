@@ -35,12 +35,13 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
+//Create Player
 var Player = function(){
     this.sprite = 'images/char-horn-girl.png';
     this.x = 200;
     this.y = 400;
 }
-
+//Set movement
 Player.prototype.update = function(){
     if (this.ctlKey === 'left' && this.x > 0) {
         this.x = this.x - 50;
@@ -61,7 +62,7 @@ Player.prototype.update = function(){
 Player.prototype.handleInput = function(p){
     this.ctlKey = p;
 }
-
+//create enemies
 var allEnemies = [];
 (function setEnemies(){
     allEnemies.push(new Enemy(-2, 60));
