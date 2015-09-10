@@ -9,7 +9,7 @@ Object.prototype.reset = function() {
     player.y = 400;
 }
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(x,y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
