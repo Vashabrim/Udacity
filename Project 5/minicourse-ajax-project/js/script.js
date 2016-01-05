@@ -46,12 +46,16 @@ function loadData() {
 
     $.ajax({
         url: wikiUrl,
-        datatype: "jsonp",
+        data: {
+            format: 'json'
+        },
+        dataType: "jsonp",
+        origin: 'https://www.mediawiki.org',
         // jsonp: "callback",
         success: function (response) {
             var articleList = response[1];
 
-            for (var i = 0; i < articlelist.length; i++) {
+            for (var i = 0; i < articleList.length; i++) {
                 articleStr = articleList[i];
                 var url = 'http://en.wikipedia.org/wiki/' + articleStr;
                 $wikiElem.append('<li><a href="' + url + '">' + articleStr + '</a></li>');
