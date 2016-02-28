@@ -1,0 +1,70 @@
+Hello!
+
+**************Updates for May 21, 2015****************
+Based on the great feedback from the code reviewer, I
+updated this project with the following enhancements:
+- I offset the center of the map so the infowindows were
+  not obscured by the search bar or nav list.
+- I resized the search bar and nav list for different
+  screen sizes.
+- I added graceful recoveries from failures.
+- I cleaned up the code.
+
+I experimented with moving the nav list to the bottom, but on very small screens, the search bar still obscured the infowindows.  I decided the best way to resolve the issue was
+to offset the map center.  This is a bit trickier than it seems--it requires converting the lat/long to points and adjusting for the map zoom; then, reconverting to lat/long for the new map center.  I think this is the cleanest solution.  Once I moved the map center, the infowindows displayed clearly on all screen sizes, and it made sense to move the nav list back up to the top of the page (where it looks better anyway;)
+
+I really appreciate the great feedback--thank you!
+*****************************************************
+
+I chose this project because my daughter just moved to Georgetown.  She like to work/read in coffee shops and do pilates and yoga, so I researched the best coffeehouses with wi-fi and yoga studios using her apartment to center the map.  As a followup project, I'm going to create a map of Chicago locations featured in major films (after I finish the final FEND project).
+
+I used many resources to complete this project. After completing the Udacity courses, I attended/viewed relevant office hours.  I also reviewed the Knockout documentation and tutorials.  Then I used both printed and online resources to help implement my solution strategy.
+
+I ran into a major hurdle trying to incorporate the Foursquare tips into my marker infoWindows on Google maps. While this seems like a straightforward task, it is actually pretty complicated.  I was able to successfully retrieve the tips from the Foursquare API, and I was able to open and add the correct location data for the infoWindow markers. However, I was unable to add the Foursquare tips.  I refactored my code over and over, and I was pretty sure I was having problems with variable scope and/or asynchronous data loading.  I looked into using callbacks, Knockout mapping, and JavaScript promises, among other things.  I found several forum posts that resoved similar issues by making the JSON call asynchronous, but I felt that was not good practice.  Finally, I decided to load the Foursquare API response data into an array and use that array to populate the model location data tip attributes.  Unfortunately, my joy at an apparent solution was short-lived as I discovered that the asynchronous responses were returned in random order; therefore, they were assigned to the markers in random mis-matched order.  I changed my Foursquare API call to get both venueID and tips so I could then use the venueID as a key to match correct tips to their respective locations.  The final piece of the puzzle was to resolve the loop closure challenges and async issues with a callback function.
+
+In retrospect, it would have been much easier to just populate my locations/markers using Foursquare completely, but the challenge of matching the asynchronous API response data to my static data model forced me to really understand the nuances of JSON asynchronous responses and closures.  Resolving this seemingly simple problem required weeks of debugging, research, and refactoring.
+
+
+Here is a sampling of some of the resources I used:
+
+Google Maps API tutorial: http://www.w3schools.com/googleapi/google_maps_basic.asp
+
+Google Developers Guides: https://developers.google.com/maps/documentation/javascript/examples/map-simple
+
+Search box: https://developers.google.com/maps/documentation/javascript/examples/places-searchbox
+
+Maps Icons Collection https://mapicons.mapsmarker.com
+
+http://learn.knockoutjs.com/#/?tutorial=collections
+
+http://webdesign.tutsplus.com/tutorials/getting-creative-with-the-google-maps-api--webdesign-13380
+
+http://www.w3schools.com/tags/ref_colorpicker.asp
+
+http://mydevice.io/devices/ (for screen size ideas)
+
+https://www.iconfinder.com
+
+http://www.worldatlas.com/aatlas/findlatlong.htm
+
+http://encosia.com/3-reasons-why-you-should-let-google-host-jquery-for-you/
+
+http://stackoverflow.com/questions/14220321/how-to-return-the-response-from-an-asynchronous-call
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+http://stackoverflow.com/questions/489340/vertically-align-text-next-to-an-image
+
+Offsetting the map center: http://stackoverflow.com/questions/10656743/how-to-offset-the-center-point-in-google-maps-api-v3
+
+Detecting offline status: https://github.com/HubSpot/offline
+
+"HTML & CSS: design and build websites" by Jon Duckett
+"JAVASCRIPT & JQUERY: interactive front-end web development" by Jon Duckett
+
+Udacity courses, office hours, coffee/code chats, chats, forums, instructor 1-on-1, Google Maps for developers, Foursquare API documentation, MDN, Github, Stackoverflow, Sitepoint, coding forums, etc.
+
+
+
+
+
