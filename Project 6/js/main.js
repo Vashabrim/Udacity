@@ -4,7 +4,7 @@ var map;
 var infowindow;
 
 function initMap() {
-    var dtdsm = { lat: 41.585548, lng: -93.632818 };
+    var dtdsm = { lat: 41.5890778, lng: -93.6613354 };
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: dtdsm,
@@ -16,7 +16,7 @@ function initMap() {
     service.nearbySearch({
         location: dtdsm,
         radius: 2500,
-        type: ['hotel']
+        type: ['food']
     }, callback);
 }
 
