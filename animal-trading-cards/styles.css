@@ -1,0 +1,47 @@
+/* add your CSS here */
+
+.container {
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    border: 2px solid gray;
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+}
+
+body {
+    width: 80%;
+    margin: 0, auto;
+    font-family: Arial;
+}
+
+.innerbox {
+    width: 95%;
+    margin: auto;
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+
+
+.italics {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+img {
+    margin-top: -40px;
+    width: 100%;
+}
+p {
+    padding: 3px;
+}
