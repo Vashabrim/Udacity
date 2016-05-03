@@ -4,18 +4,56 @@
     <title>Downtown Des Moines for Visitors</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <meta charset="utf-8">
     <style>
         @import url('css/main.css');
     </style>
+
+</head>
+<body>
+    <div class="map-canvas" data-bind="googlemap: {dsmEats: dsmEats}, infowindow: { dsmEat: selected, messages: datastatus}"></div>
+    <div id="controls">
+        <div id="eatsList" class="eatsList-control">
+            <div id="eatsListMenu">
+                <button id="eatsListToggle" class="eatsListMenu">
+                    Search/Filters<span class="fa fa-cutlery"></span>
+                </button>
+            </div>
+            <div id="eatsListHideable" class="eatsMenuSmall">
+                <div class="search-box">
+                    <input type="search" placeholder="Growing Hungry..." id="dsmEatsSearch" data-bind="textinput: searchtext" />
+                    <button class="search-box-clear" data-bind="click: clearSearchText">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <ul class="eatsListFilters" data-bind="foreach: filters">
+                    <li data-bind="click: $parent.toggleFilter, attr: {title: hover()}"></li>
+                </ul>
+                <div class="eatsList">
+                    <p class="eatsListEmpty" data-bind="visible: emptySearch">"No matches found."</p>
+                    <ul data-bind="foreach: dsmEats" class="eatsListItem">
+                        <li data-bind="visible: visible, click: $parent.ShowMarker">
+                            <p data-bind="text: name" class="eatsListName"></p>
+                            <div data-bind="foreach: dsmEats">
+                                <p class="eatsListData"><span data-bind="text: name"></span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="selectedEats" data-bind="with: selectedEats">
+            <h1 data-bind="text: name"></h1>
+            <div data-bind="foreach: dsmEats">
+
+            </div>
+        </div>
+    </div>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPUGiEbFiBSzCm687QVShV8Qhh52XNPVA&signed_in=true&libraries=places&callback=initMap" async defer></script>
     <script src="Scripts/main.js"></script>
     <script src="Scripts/knockout-3.4.0.js"></script>
     <script src="Scripts/jquery-2.2.3.js"></script>
-</head>
-<body>
-    <div id="map">
-        
-    </div>
 </body>
 </html>
