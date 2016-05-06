@@ -8,6 +8,24 @@
     <meta charset="utf-8">
     <style>
         @import url('css/main.css');
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .map-canvas {
+            height: 100%;
+        }
+
+        #controls {
+            display: none;
+        }
     </style>
 
 </head>
@@ -46,14 +64,15 @@
         <div id="selectedEats" data-bind="with: selectedEats">
             <h1 data-bind="text: name"></h1>
             <div data-bind="foreach: dsmEats">
-
+                <p class="eatsInfo"><span dat-bind="text: name"></span></p>
             </div>
         </div>
     </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPUGiEbFiBSzCm687QVShV8Qhh52XNPVA&signed_in=true&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdFF08FCOfqwn9F8PDb50X5B9bRiIRjyA&callback=initMap" async defer></script>
     <script src="Scripts/main.js"></script>
-    <script src="Scripts/knockout-3.4.0.js"></script>
-    <script src="Scripts/jquery-2.2.3.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/libs/jquery-2.2.3.js"></script>
+    <script src="Scripts/libs/knockout-3.4.0.js"></script>
 </body>
 </html>
