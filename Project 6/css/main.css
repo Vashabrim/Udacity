@@ -1,69 +1,77 @@
 
-.container-full {
-	margin: 0 auto;
-	width: 100%;
-	background-color: #755638 ;
+.container-fluid {
+    margin: 0 auto;
+    width: 100%;
+    background-color: #032336;
 }
 
 a {
-	text-decoration: none;
-	color: black;
+    text-decoration: none;
+    color: black;
 }
 
 ul,
 li {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	color: white;    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: white;
 }
 
 .sideBar {
-	width: 16.666%;
-	float:left;
-	position: relative;
-	padding-left: 15px;
-	border-right: 1px solid black;
-	background-color: #4E3229;		  
+    width: 16.666%;
+    float: left;
+    position: relative;
+    padding-left: 15px;
+    border-right: 1px solid black;
+    background-color: #28536c;
 }
 
 .filter {
-	width: 100%;
-	height: 30px;
-	color:black;
+    width: 100%;
+    height: 30px;
+    color: black;
 }
 
 .place {
-	height: 40px;
-	line-height: 40px;
-	padding: 0 30px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 30px;
 }
 
-.place:hover {
-	background-color: #755638;
-	cursor: pointer;
-	font-weight: bold;
-}
+    .place:hover {
+        background-color: #28774F;
+        cursor: pointer;
+        font-weight: bold;
+    }
 
-.donuts {
-	padding-top: 10px;
-	color: blue;
+.gym {
+    padding-top: 10px;
+    color: blue;
 }
 
 .mapDiv {
-	width: 83.333%;
-	float:left;    
-	height: 100vh;  
+    width: 83.333%;
+    float: left;
+    height: 100vh;
+}
+
+.rotate90 {
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 @media screen and (max-width: 1460px) {
-	.sideBar {
-		width: 100%; 
-		position: absolute;
-		z-index: 1
-	}
-	.mapDiv {
-		width: 100%;
-	}
-	
+    .sideBar {
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .mapDiv {
+        width: 100%;
+    }
 }
