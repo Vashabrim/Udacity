@@ -4,9 +4,11 @@
 var dsmEats = [
 	{ 'name': "Zombie Burger + Drink Lab", "location": "300 E Grand Ave, Des Moines, Iowa", "lat": 41.590581, "lng": -93.613274 },
 	{ "name": "Fong's Pizza", "location": "223 4th Street, Des Moines, Iowa", "lat": 41.585894, "lng": -93.621786 },
-	{ "name": "Royal Mile", "location": "210 4th Street, Des Moines, Iowa", "lat": 41.583463, "lng": -93.621968 },
+	{ "name": "Royal Mile", "location": "210 4th Street, Des Moines, Iowa", "lat": 41.585426, "lng": -93.621965 },
 	{ "name": "Django", "location": "210 10th Street, Des Moines, Iowa", "lat": 41.584339, "lng": -93.629251 },
-	{ "name": "Exile Brewing Company", "location": "1514 Walnut Street, Des Moines, Iowa", "lat": 41.583170, "lng": -93.636655 }
+	{ "name": "Exile Brewing Company", "location": "1514 Walnut Street, Des Moines, Iowa", "lat": 41.583170, "lng": -93.636655 },
+	{ "name": "The Cheese Shop", "location": "833 42nd Street, Des Moines, Iowa", "lat": 41.593017, "lng": -93.674183 },
+	{ "name": "El Bait Shop", "location": "200 SW 2nd Street, Des Moines, Iowa", "lat": 41.582930, "lng": -93.618725 }
 ];
 
 // Initializes the Google Map centered on Downtown Des Moines.
@@ -67,7 +69,9 @@ function clickData(dsmSpot) {
 		infowindow.setContent(createContent(dsmEats) + html);
 		infowindow.open(map, dsmEats.marker);
 	});
+
 }
+
 
 // Filter
 var ViewModel = function () {

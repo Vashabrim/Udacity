@@ -7,7 +7,7 @@
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 ul,
@@ -19,12 +19,14 @@ li {
 }
 
 .sideBar {
-    width: 16.666%;
+    /*width: 16.666%;
     float: left;
-    position: relative;
+    
     padding-left: 15px;
-    border-right: 1px solid black;
+    */
     background-color: #28536c;
+    position: relative;
+    border-right: 1px solid black;
 }
 
 .filter {
@@ -51,8 +53,8 @@ li {
 }
 
 .mapDiv {
-    width: 83.333%;
-    float: left;
+    /*width: 83.333%;
+    float: left;*/
     height: 100vh;
 }
 
